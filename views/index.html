@@ -4,29 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloudtype - Node.js</title>
+    <title>불편사항 제출</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="/images/favicon.ico">
+
+    <!-- 네이버 스타일링 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #03c75a;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group input[type="text"],
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn-submit {
+            background-color: #03c75a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- 네이버 스타일링 끝 -->
 </head>
 <body>
-    <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="/images/node.png" class="w-36 rounded-lg md:ml-5 lg:ml-5" />
-          <div>
-            <h1 class="text-5xl font-bold">Node.js</h1>
-            <p class="py-6">클라우드타입에서 배포한 Node.js 어플리케이션입니다.</p>
-            <button type="button" onclick="window.open('https://github.com/cloudtype-examples/node-express')" class="btn btn-outline rounded">
-              GitHub
-            </button>
-            <button type="button" onclick="window.open('https://docs.cloudtype.io/')" class="btn btn-outline rounded">
-              Docs
-            </button>
-            <button type="button" onclick="window.open('https://discord.gg/U7HX4BA6hu')" class="btn btn-outline rounded">
-              Discord
-            </button>            
-          </div>
+    <div class="header">
+        <h1 class="text-3xl font-semibold">불편사항 제출</h1>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <div class="input-group">
+                <label for="reporter">신고자:</label>
+                <input type="text" id="reporter" name="reporter" placeholder="신고자 이름">
+            </div>
+            <div class="input-group">
+                <label for="location">신고위치:</label>
+                <input type="text" id="location" name="location" placeholder="신고 위치">
+            </div>
+            <div class="input-group">
+                <label for="complaint">신고내용:</label>
+                <textarea id="complaint" name="complaint" rows="5" placeholder="불편사항을 입력하세요"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">제출</button>
         </div>
-      </div>
+    </div>
 </body>
 </html>
